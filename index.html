@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>TS Simple Todo App</title>
+</head>
+<body>
+    <section class="top-highlight"></section>
+    <main>
+        <header>
+            <h1>TODO</h1>
+            <div class="theme">
+                <button class="theme-btn focus-visible set-light-theme-btn" onclick="setTheme('light')">
+                    <img src="./assets/icons/sun.svg" alt="sun" title="set light theme">
+                </button>
+                <button class="theme-btn focus-visible set-dark-theme-btn" onclick="setTheme('dark')">
+                    <img src="./assets/icons/moon.svg" alt="moon" title="set dark theme">
+                </button>
+            </div>
+        </header>
+
+        <section class="app">
+            <form class="add-todo content-block">
+                <label class="input-group">
+                    <span class="radio-circle"></span>
+                    <input type="text" class="todo-input" name="todo" placeholder="Create a new todo">
+                </label>
+            </form>
+
+            <section class="no-todos content-block hidden">
+                <p class="no-todo-title">
+                    No items available
+                </p>
+                <p class="no-todo-desc">
+                    Type an item into the input above and hit <code>Enter</code>
+                </p>
+            </section>
+
+            <section class="todos content-block">
+                <ul class="todo-list" role="list"></ul>
+                <div class="todos-bottom hidden">
+                    <p class="items-left">
+                        <span class="todos-count">0</span> items left
+                    </p>
+                    <div class="large-todo-tab-controls">
+                        <button class="tab-btn clear-btn focus-visible tab-all active" data-tab="all" onclick="changeTab(event)">
+                            All
+                        </button>
+                        <button class="tab-btn clear-btn focus-visible tab-active" data-tab="active" onclick="changeTab(event)">
+                            Active
+                        </button>
+                        <button class="tab-btn clear-btn focus-visible tab-completed" data-tab="completed" onclick="changeTab(event)">
+                            Completed
+                        </button>
+                    </div>
+                    <div class="">
+                        <button class="clear-btn focus-visible clear-todos-btn" onclick="clearCompletedTodos()">
+                            Clear Completed
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mobile-todo-tab-controls content-block">
+                <button class="tab-btn clear-btn focus-visible tab-all active" data-tab="all" onclick="changeTab(event)">
+                    All
+                </button>
+                <button class="tab-btn clear-btn focus-visible tab-active" data-tab="active" onclick="changeTab(event)">
+                    Active
+                </button>
+                <button class="tab-btn clear-btn focus-visible tab-completed" data-tab="completed" onclick="changeTab(event)">
+                    Completed
+                </button>
+            </section>
+        </section>
+
+        <footer class="hidden">
+            <p>Drag and drop to reorder list</p>
+        </footer>
+    </main>
+
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
